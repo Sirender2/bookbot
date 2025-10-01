@@ -10,6 +10,18 @@ def get_character_count (text):
         else:
             char_dict[char] += 1
     return char_dict
-    
-#text = "Abcdefg hijklmnop aBCdefg abcde"
-#print(get_character_count(text))
+
+def sort_on(items):
+    return items["num"]
+
+def get_sorted_list(dict) :
+    dict_list = []
+    for char, num in dict.items():
+        dict_char = {"char" : char, "num": num}
+        dict_list.append(dict_char)
+    dict_list.sort(reverse=True, key=sort_on)
+    return dict_list
+
+
+# text = "FFFFFF Abcdefg hijklmnop aBCdefg abcde"
+# print(get_sorted_list(get_character_count(text)))
